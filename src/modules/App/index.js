@@ -1,7 +1,6 @@
 import React from "react";
 import connect from "react-redux";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
-import {Link} from "react-router-dom";
 
 import Header from "../Header";
 import Login from "../routes/Login";
@@ -10,6 +9,7 @@ import Today from "../routes/Today";
 import Main from "../routes/Main";
 import Footer from "../Footer";
 
+import back from "./background.jpg";
 import "./index.css";
 
 let App = () => (

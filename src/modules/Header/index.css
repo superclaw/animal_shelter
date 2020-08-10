@@ -1,0 +1,8 @@
+.header {
+  background: #ccc;
+  box-shadow: inset 0 -20px 15px -5px rgba(0,0,0,0.5);
+}
+
+.header__wrapper {
+  padding: 20px 0;
+}
