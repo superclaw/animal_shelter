@@ -1,12 +1,13 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 import "./index.css";
+import logo from "./banner.jpg";
 
 const Header = () => (
     <header className="header">
       <div className="wrapper header__wrapper">
         <NavLink to="/" className="logo">
-          <img src="" alt="Логотип сайта" />
+          <img src={logo} alt="Логотип сайта" />
         </NavLink>
         <nav className="menu">
           <ul className="menu__list">
