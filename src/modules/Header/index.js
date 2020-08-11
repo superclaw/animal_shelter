@@ -7,7 +7,7 @@ import logo from "./banner.jpg";
 const Header = ({isLoggedIn, logoutUser}) => {
   const loginBtn = isLoggedIn
       ? <button className="btn" onClick={() => logoutUser()}>Выйти</button>
-      : <NavLink to="/login" className="btn">Войти</NavLink>;
+      : <NavLink to={`${PATH_NAME}login`} className="btn">Войти</NavLink>;
 
   return (
     <header className="header">

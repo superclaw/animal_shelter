@@ -10,7 +10,9 @@ class Success extends React.Component {
   }
 
   redirectToPage() {
-    document.location.assign(`${PATH_NAME}today`);
+    const url = `${window.location.protocol}//${window.location.host + PATH_NAME}today`;
+
+    document.location.assign(url);
   }
 
   componentDidMount() {
