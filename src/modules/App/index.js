@@ -7,7 +7,6 @@ import "./index.css";
 
 import Header from "../Header";
 import Login from "../routes/Login";
-import Success from "../routes/Success";
 import Animals from "../routes/Animals";
 import Today from "../routes/Today";
 import Main from "../routes/Main";
@@ -26,9 +25,6 @@ let App = ({state, loginUser, changeInputValue, logoutUser}) => (
                   loginUser={loginUser}
                   changeInputValue={changeInputValue} />
             </Route>
-            <Route path={`${PATH_NAME}success`}>
-              <Success isLoggedIn={state.isLoggedIn} />
-            </Route>
             <Route path={`${PATH_NAME}animals`}>
               <Animals isLoggedIn={state.isLoggedIn} />
             </Route>
@@ -36,7 +32,7 @@ let App = ({state, loginUser, changeInputValue, logoutUser}) => (
               <Today isLoggedIn={state.isLoggedIn} />
             </Route>
             <Route exact path={PATH_NAME}>
-              <Main />
+              <Main redirect={state.redirect} />
             </Route>
           </Switch>
         </div>

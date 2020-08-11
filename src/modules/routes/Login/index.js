@@ -4,7 +4,7 @@ import {PATH_NAME} from "../../../index";
 import "./index.css";
 
 const Login = ({isLoggedIn, loginForm, loginUser, changeInputValue}) => {
-  return isLoggedIn ? <Redirect to={`${PATH_NAME}success`} /> : (
+  return isLoggedIn ? <Redirect to={`${PATH_NAME}today`} /> : (
       <div className="content login">
         <h2 className="login__title">Пожалуйста, войдите под своим логином и паролем.</h2>
         <form
