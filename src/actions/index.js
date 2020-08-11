@@ -14,7 +14,7 @@ export const loginUser = (username, password) => async function(dispatch) {
     }
   });
 
-  console.log(PATH_NAME);
+  alert(PATH_NAME);
 
   dispatch({
     type: 'LOGIN_USER',
