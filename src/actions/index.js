@@ -1,6 +1,5 @@
 import {USERS} from "../index";
 import Cookies from "js-cookie";
-import {PATH_NAME} from "../index";
 
 export const loginUser = (username, password) => async function(dispatch) {
   const users = await JSON.parse(USERS);                                  // "Загрузка с сервера"
@@ -13,8 +12,6 @@ export const loginUser = (username, password) => async function(dispatch) {
       Cookies.set('session_token', 'login_successful', {expires: 7});
     }
   });
-
-  alert(PATH_NAME);
 
   dispatch({
     type: 'LOGIN_USER',

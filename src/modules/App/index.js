@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {loginUser, changeInputValue, logoutUser} from "../../actions";
+import {PATH_NAME} from "../../index";
 import "./index.css";
 
 import Header from "../Header";
@@ -18,23 +19,23 @@ let App = ({state, loginUser, changeInputValue, logoutUser}) => (
       <main className="main">
         <div className="wrapper main__wrapper">
           <Switch>
-            <Route path="/login">
+            <Route path={`${PATH_NAME}login`}>
               <Login
                   isLoggedIn={state.isLoggedIn}
                   loginForm={state.loginForm}
                   loginUser={loginUser}
                   changeInputValue={changeInputValue} />
             </Route>
-            <Route path="/success">
+            <Route path={`${PATH_NAME}success`}>
               <Success isLoggedIn={state.isLoggedIn} />
             </Route>
-            <Route path="/animals">
+            <Route path={`${PATH_NAME}animals`}>
               <Animals isLoggedIn={state.isLoggedIn} />
             </Route>
-            <Route path="/today">
+            <Route path={`${PATH_NAME}today`}>
               <Today isLoggedIn={state.isLoggedIn} />
             </Route>
-            <Route exact path="/">
+            <Route exact path={PATH_NAME}>
               <Main />
             </Route>
           </Switch>

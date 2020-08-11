@@ -1,9 +1,10 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
+import {PATH_NAME} from "../../../index";
 import "./index.css";
 
 const Login = ({isLoggedIn, loginForm, loginUser, changeInputValue}) => {
-  return isLoggedIn ? <Redirect to="/success" /> : (
+  return isLoggedIn ? <Redirect to={`${PATH_NAME}success`} /> : (
       <div className="content login">
         <h2 className="login__title">Пожалуйста, войдите под своим логином и паролем.</h2>
         <form

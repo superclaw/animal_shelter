@@ -1,5 +1,6 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
+import {PATH_NAME} from "../../../index";
 import "./index.css";
 
 import img1 from "./img/1.jpg";
@@ -18,7 +19,7 @@ import img13 from "./img/13.jpg";
 import img14 from "./img/14.jpg";
 import img15 from "./img/15.jpg";
 
-const Animals = ({isLoggedIn}) => !isLoggedIn ? <Redirect to="/login" /> : (
+const Animals = ({isLoggedIn}) => !isLoggedIn ? <Redirect to={`${PATH_NAME}login`} /> : (
     <div className="content animals">
       <h2 className="animals__title">Наши животные</h2>
       <ul className="animals__list">

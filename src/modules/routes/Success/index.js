@@ -1,5 +1,6 @@
 import React from "react";
 import {Redirect, NavLink} from "react-router-dom";
+import {PATH_NAME} from "../../../index";
 import "./index.css";
 
 class Success extends React.Component {
@@ -9,7 +10,7 @@ class Success extends React.Component {
   }
 
   redirectToPage() {
-    document.location.assign('/today');
+    document.location.assign(`${PATH_NAME}today`);
   }
 
   componentDidMount() {
@@ -17,13 +18,13 @@ class Success extends React.Component {
   }
 
   render() {
-    return !this.isLoggedIn ? <Redirect to="/login" /> : (
+    return !this.isLoggedIn ? <Redirect to={`${PATH_NAME}login`} /> : (
         <div className="content success">
           <h2 className="success__title">
             Успешный вход!
           </h2>
           <p className="success__message">
-            Если переадресации не происходит, нажмите <NavLink to="/today" className="success__link">здесь</NavLink>.
+            Если переадресации не происходит, нажмите <NavLink to={`${PATH_NAME}today`} className="success__link">здесь</NavLink>.
           </p>
         </div>
     )
