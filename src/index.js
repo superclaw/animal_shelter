@@ -15,6 +15,8 @@ export const USERS = JSON.stringify([                                 // Дан�
   },
 ]);
 
+export const PATH_NAME = window.location.pathname;
+
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
