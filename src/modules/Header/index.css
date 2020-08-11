@@ -1,8 +1,46 @@
 .header {
-  background: #ccc;
-  box-shadow: inset 0 -20px 15px -5px rgba(0,0,0,0.5);
+  padding: 20px 0 35px;
+  color: #efe;
+  background: #789;
+  box-shadow: inset 0 -20px 15px -5px rgba(0, 0, 0, .5);
 }
 
 .header__wrapper {
-  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu__item:not(:last-child) {
+  margin-right: 40px;
+}
+
+.menu__item:not(:last-child)::after {
+  content: '';
+  width: 2px;
+  height: 40px;
+  border-right: 2px solid currentColor;
+  padding-left: 40px;
+}
+
+.menu__link {
+  font-size: 20px;
+  color: inherit;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 300ms, color 300ms;
+}
+
+.menu__link:hover {
+  border-bottom-color: currentColor;
+}
+
+.menu__link--active {
+  pointer-events: none;
+  color: #f77;
 }

@@ -1,13 +1,19 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
+import Cookies from "js-cookie";
 import "./index.css";
 import logo from "./banner.jpg";
 
-const Header = () => (
+const Header = ({isLoggedIn, logoutUser}) => {
+  const loginBtn = isLoggedIn
+      ? <button className="btn" onClick={() => logoutUser()}>Выйти</button>
+      : <NavLink to="/login" className="btn">Войти</NavLink>;
+
+  return (
     <header className="header">
       <div className="wrapper header__wrapper">
-        <NavLink to="/" className="logo">
-          <img src={logo} alt="Логотип сайта" />
+        <NavLink to="/" className="logo" title="На главную">
+          <img src={logo} alt="Логотип сайта" className="logo__img" />
         </NavLink>
         <nav className="menu">
           <ul className="menu__list">
@@ -16,15 +22,17 @@ const Header = () => (
                 Сегодня
               </NavLink>
             </li>
-            <li>
+            <li className="menu__item">
               <NavLink to="/animals" className="menu__link" activeClassName="menu__link--active">
                 Животные
               </NavLink>
             </li>
           </ul>
         </nav>
+        {loginBtn}
       </div>
     </header>
-);
+  );
+};
 
 export default Header;

@@ -1,31 +1,38 @@
 import React from "react";
-import connect from "react-redux";
+import {connect} from "react-redux";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {loginUser, changeInputValue, logoutUser} from "../../actions";
+import "./index.css";
 
 import Header from "../Header";
 import Login from "../routes/Login";
+import Success from "../routes/Success";
 import Animals from "../routes/Animals";
 import Today from "../routes/Today";
 import Main from "../routes/Main";
 import Footer from "../Footer";
 
-import back from "./background.jpg";
-import "./index.css";
-
-let App = () => (
+let App = ({state, loginUser, changeInputValue, logoutUser}) => (
     <Router>
-      <Header />
+      <Header isLoggedIn={state.isLoggedIn} logoutUser={logoutUser} />
       <main className="main">
         <div className="wrapper main__wrapper">
           <Switch>
             <Route path="/login">
-              <Login />
+              <Login
+                  isLoggedIn={state.isLoggedIn}
+                  loginForm={state.loginForm}
+                  loginUser={loginUser}
+                  changeInputValue={changeInputValue} />
+            </Route>
+            <Route path="/success">
+              <Success isLoggedIn={state.isLoggedIn} />
             </Route>
             <Route path="/animals">
-              <Animals />
+              <Animals isLoggedIn={state.isLoggedIn} />
             </Route>
             <Route path="/today">
-              <Today />
+              <Today isLoggedIn={state.isLoggedIn} />
             </Route>
             <Route exact path="/">
               <Main />
@@ -36,5 +43,16 @@ let App = () => (
       <Footer />
     </Router>
 );
+
+App = connect(
+    state => ({
+      state: state,
+    }),
+    dispatch => ({
+      loginUser: (username, password) => dispatch(loginUser(username, password)),
+      changeInputValue: (type, value) => dispatch(changeInputValue(type, value)),
+      logoutUser: () => dispatch(logoutUser()),
+    }),
+)(App);
 
 export default App;

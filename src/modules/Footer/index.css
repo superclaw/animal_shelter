@@ -1,0 +1,22 @@
+.footer {
+  padding: 35px 0 20px;
+  color: #efe;
+  font-size: 20px;
+  background: #789;
+  box-shadow: inset 0 20px 15px -5px rgba(0, 0, 0, .5);
+}
+
+.footer__wrapper {
+  text-align: center;
+}
+
+.footer__link {
+  font-weight: 700;
+  color: #33a;
+  text-decoration: underline;
+  transition: color 300ms;
+}
+
+.footer__link:hover {
+  color: #f77;
+}

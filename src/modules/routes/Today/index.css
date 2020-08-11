@@ -1,0 +1,29 @@
+.today {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 30px;
+}
+
+.today__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.today__list {
+  width: 100%;
+  max-height: 1100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+
+.today__item {
+  width: calc(1110px / 3);
+  padding: 10px;
+}
+
+.today__img {
+  width: 100%;
+}
