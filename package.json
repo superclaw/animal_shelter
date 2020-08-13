@@ -2,7 +2,7 @@
   "name": "animal_shelter",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://superclaw.github.io/animal_shelter/build/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
