@@ -10,6 +10,7 @@ import Animals from "../routes/Animals";
 import Today from "../routes/Today";
 import Main from "../routes/Main";
 import Footer from "../Footer";
+import NotFound from "../NotFound";
 
 let App = ({state, loginUser, changeInputValue, logoutUser}) => (
     <Router basename="/animal_shelter/build/">
@@ -17,21 +18,24 @@ let App = ({state, loginUser, changeInputValue, logoutUser}) => (
       <main className="main">
         <div className="wrapper main__wrapper">
           <Switch>
-            <Route path="/login">
+            <Route exact path="/login">
               <Login
                   isLoggedIn={state.isLoggedIn}
                   loginForm={state.loginForm}
                   loginUser={loginUser}
                   changeInputValue={changeInputValue} />
             </Route>
-            <Route path="/animals">
+            <Route exact path="/animals">
               <Animals isLoggedIn={state.isLoggedIn} />
             </Route>
-            <Route path="/today">
+            <Route exact path="/today">
               <Today isLoggedIn={state.isLoggedIn} />
             </Route>
             <Route exact path="/">
               <Main redirect={state.redirect} />
+            </Route>
+            <Route>
+              <NotFound />
             </Route>
           </Switch>
         </div>
