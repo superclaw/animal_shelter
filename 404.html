@@ -6,8 +6,10 @@
 </head>
 <body>
   <script>
-    const pathName = window.location.pathname;
-    console.log(pathName.replace('/animal_shelter/build/', '/'));
+    const pathName = window.location.pathname.replace('/animal_shelter/build/', '/');
+    const search = window.location.search;
+    const hash = window.location.hash;
+    console.log(pathName, search, hash);
   </script>
 </body>
 </html>
