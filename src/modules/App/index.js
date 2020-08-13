@@ -2,7 +2,6 @@ import React from "react";
 import {connect} from "react-redux";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {loginUser, changeInputValue, logoutUser} from "../../actions";
-import {PATH_NAME} from "../../index";
 import "./index.css";
 
 import Header from "../Header";
@@ -13,25 +12,25 @@ import Main from "../routes/Main";
 import Footer from "../Footer";
 
 let App = ({state, loginUser, changeInputValue, logoutUser}) => (
-    <Router>
+    <Router basename="/animal_shelter/build/">
       <Header isLoggedIn={state.isLoggedIn} logoutUser={logoutUser} />
       <main className="main">
         <div className="wrapper main__wrapper">
           <Switch>
-            <Route path={`${PATH_NAME}login`}>
+            <Route path="/login">
               <Login
                   isLoggedIn={state.isLoggedIn}
                   loginForm={state.loginForm}
                   loginUser={loginUser}
                   changeInputValue={changeInputValue} />
             </Route>
-            <Route path={`${PATH_NAME}animals`}>
+            <Route path="/animals">
               <Animals isLoggedIn={state.isLoggedIn} />
             </Route>
-            <Route path={`${PATH_NAME}today`}>
+            <Route path="/today">
               <Today isLoggedIn={state.isLoggedIn} />
             </Route>
-            <Route exact path={PATH_NAME}>
+            <Route exact path="/">
               <Main redirect={state.redirect} />
             </Route>
           </Switch>

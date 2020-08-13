@@ -15,8 +15,6 @@ export const USERS = JSON.stringify([                                 // Дан�
   },
 ]);
 
-export const PATH_NAME = '/animal_shelter/build/';                    // Фикс для GitHub Pages
-
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
