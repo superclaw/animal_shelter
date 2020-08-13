@@ -12,7 +12,7 @@ import Main from "../routes/Main";
 import Footer from "../Footer";
 
 let App = ({state, loginUser, changeInputValue, logoutUser}) => (
-    <Router basename="/">
+    <Router basename="/animal_shelter/build/">
       <Header isLoggedIn={state.isLoggedIn} logoutUser={logoutUser} />
       <main className="main">
         <div className="wrapper main__wrapper">
