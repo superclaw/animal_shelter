@@ -9,7 +9,7 @@
     const l = window.location;
     const defaultPath = '/animal_shelter/build/';
 
-    /*l.replace*/console.log(
+    l.replace(
         l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
         defaultPath + '?redirect_to=' + l.pathname.replace(defaultPath, '/') +
         l.search.replace(/&/g, '~and~') + l.hash
