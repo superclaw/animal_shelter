@@ -6,10 +6,14 @@
 </head>
 <body>
   <script>
-    const pathName = window.location.pathname.replace('/animal_shelter/build/', '/');
-    const search = window.location.search;
+    const defaultPath = '/animal_shelter/build/';
+    const pathName = window.location.pathname.replace(defaultPath, '/');
+    const queries = window.location.search;
     const hash = window.location.hash;
-    console.log(pathName, search, hash);
+
+    window.location.assign(
+        defaultPath + '?redirect_to=' + pathName + queries ? queries : hash ? hash : ''
+    );
   </script>
 </body>
 </html>
