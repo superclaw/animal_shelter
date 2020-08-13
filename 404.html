@@ -11,9 +11,10 @@
     const queries = window.location.search;
     const hash = window.location.hash;
 
-    window.location.assign(
-        defaultPath + '?redirect_to=' + pathName + queries ? queries : hash ? hash : ''
-    );
+    // window.location.assign(
+    //     defaultPath + '?redirect_to=' + pathName + queries ? queries : hash ? hash : ''
+    // );
+    console.log(defaultPath + '?redirect_to=' + pathName + queries ? queries : hash ? hash : '');
   </script>
 </body>
 </html>
